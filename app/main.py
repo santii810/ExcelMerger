@@ -1,7 +1,7 @@
-from app.output_generator import OutputGenerator
 import pandas as pd
 import streamlit as st
-from app.file_data import FileData
+import re
+from io import BytesIO
 
 
 class Page:
@@ -84,10 +84,6 @@ class Page:
                 )
         else:
             st.info("No hay archivos transformados para exportar.")
-
-
-import pandas as pd
-import re
 
 
 class FileData:
@@ -175,10 +171,6 @@ class FileData:
 
             # Eliminar filas donde 'Amount' sea NaN
             self.transformed_content = melted.dropna(subset=["Amount"])
-
-
-import pandas as pd
-from io import BytesIO
 
 
 class OutputGenerator:
